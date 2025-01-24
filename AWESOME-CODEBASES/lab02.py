@@ -5,7 +5,7 @@ import random
 numLives = 10           # number of player's lives remaining
 mNumLives = 12          # number of monster's lives remaining
 
-diceOptions = [1, 2, 3, 4, 5, 6]
+diceOptions = list(range(1, 7))
 combatStrength = int(input("Enter your combat Strength: "))
 mCombatStrength = int(input("Enter the monster's combat Strength: "))
 weapons = ["First", "Knife", "Club", "Gun", "Bomb", "Nuclear Bomb"]
