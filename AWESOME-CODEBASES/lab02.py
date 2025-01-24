@@ -6,7 +6,7 @@ numLives = 10           # number of player's lives remaining
 mNumLives = 12          # number of monster's lives remaining
 
 diceOptions = list(range(1, 7))
-combatStrength = int(input("Enter your Combat Strength: (Select a number from 1-6)"))
+#combatStrength = int(input("Enter your Combat Strength: (Select a number from 1-6)"))
 
 while True:
     try:
