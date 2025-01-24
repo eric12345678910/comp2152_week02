@@ -6,8 +6,20 @@ numLives = 10           # number of player's lives remaining
 mNumLives = 12          # number of monster's lives remaining
 
 diceOptions = list(range(1, 7))
-combatStrength = int(input("Enter your combat Strength: "))
-mCombatStrength = int(input("Enter the monster's combat Strength: "))
+combatStrength = int(input("Enter your Combat Strength: (Select a number from 1-6)"))
+
+while True:
+    try:
+        combatStrength = int(input("Enter your Combat Strength: (Select a number from 1-6)"))
+        if combatStrength > 1 or combatStrength < 6:
+            break # valid input
+        else:
+            print("Error: please select a valid number (1-6)")
+            
+    except: 
+        print("error: please enter a number between 1-6")
+   
+mCombatStrength = int(input("Enter the monster's Combat Strength: (Select a number from 1-6)"))
 weapons = ["Fist", "Knife", "Club", "Gun", "Bomb", "Nuclear Bomb"]
 
 # Health Points
@@ -30,8 +42,19 @@ numWeapons = len(weapons)
 weaponRoll = random.choice(diceOptions)
 combatStrength += int(weaponRoll)
 print("You rolled a " + str(weaponRoll))
-print("Your combat strength increases to " + str(combatStrength) + " as you...")
-print("reveal your mighty " + weapons[(int(weaponRoll)-1)])
+print("Your combat strength increases to " + str(combatStrength))
+print("as you reveal your mighty " + weapons[(int(weaponRoll)-1)] + "\n")
+
+if weaponRoll <= 2:
+    print("You rolled a weak weapon, friend")
+elif weaponRoll <= 4:
+    print("Your weapon is meh")
+else:
+    print("Nice weapon friend.")
+if weaponRoll != 1:
+    print("Thank goodness you didn't roll the Fist...")
+
+
 
 
 
